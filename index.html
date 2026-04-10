@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Монитор в экструзию</title>
+  </head>
+
+  <body>
+    <script src="./Scripts/custom-components.js"></script>
+
+    <div class="roll">
+      <img class="workers" src="./Assets/PNG/workers.png" alt="workers"></img>
+      <h1 class="title">Результаты работы Цехов экструзии №1, №2 - апрель 2026</h1>
+
+      <div class="shift-gauges">
+        <shift-gauge 
+          id="shift-1"
+          title="Смена №1" 
+          worker="Березниченко А. В. / Цыганков В. А." 
+          remain-count="10"
+          decline-icon-path="./Assets/SVG/white_arrow_green.svg"
+          total-amount="350"
+          actual-amount="150"
+          decline-amount="20">
+        </shift-gauge>
+
+        <shift-gauge 
+          id="shift-2"
+          title="Смена №2" 
+          worker="Слюсаренко Е. Н. / Беркутов А. М." 
+          remain-count="10"
+          decline-icon-path="./Assets/SVG/white_arrow_green.svg"
+          total-amount="350"
+          actual-amount="120"
+          decline-amount="50">
+        </shift-gauge>
+
+        <shift-gauge 
+          id="shift-3"
+          title="Смена №3" 
+          worker="Лепилин М. Г. / Чекмарев С. В." 
+          remain-count="10"
+          decline-icon-path="./Assets/SVG/white_arrow_green.svg"
+          total-amount="350"
+          actual-amount="200"
+          decline-amount="70">
+        </shift-gauge>
+
+        <shift-gauge 
+          id="shift-4"
+          title="Смена №4"
+          decline-icon-path="./Assets/SVG/white_arrow_red.svg">
+        </shift-gauge>
+      </div>
+    </div>
+
+    <div class="shift-cards">
+      <shift-card 
+        id="shift-card-1"
+        title="Смена №1"
+        plan-amount="26,3"
+        last-amount="22,7"
+        green-count="5"
+        waste-rate="4,0"
+        waste-norm="3"
+        progress-icon-path="./Assets/SVG/white_arrow_red.svg"
+        active>
+      </shift-card>
+
+      <shift-card 
+        id="shift-card-2"
+        title="Смена №2"
+        plan-amount="26,3"
+        last-amount="23,2"
+        green-count="3"
+        waste-rate="5,0"
+        waste-norm="3"
+        progress-icon-path="./Assets/SVG/white_arrow_red.svg">
+      </shift-card>
+
+      <shift-card 
+        id="shift-card-3"
+        title="Смена №3"
+        plan-amount="26,3"
+        last-amount="22,9"
+        green-count="6"
+        waste-rate="3,0"
+        waste-norm="3"
+        progress-icon-path="./Assets/SVG/white_arrow_red.svg"
+        best>
+      </shift-card>
+
+      <shift-card 
+        id="shift-card-4"
+        title="Смена №4"
+        progress-icon-path="./Assets/SVG/white_arrow_red.svg">
+      </shift-card>
+    </div>
+
+    <div class="shift-waste">
+      <div class="shift-waste__list">
+        <div class="shift-waste__list__title">
+          <p>Отходы</p>
+          <p>по линиям</p>
+        </div>
+
+        <div class="shift-waste__list__items">
+          <p>Смена №1</p>
+          <p>Смена №2</p>
+          <p>Смена №3</p>
+          <p>Смена №4</p>
+        </div>
+
+        <img class="shift-waste__list__icon" src="./Assets/SVG/recycle.svg" alt="recycle" />
+      </div>
+
+      <shift-waste-table
+        id="waste-table-1"
+        title="Эффективность Цеха Экструзии №1 (3,47%)"
+        th='["1800/1", "1800/2", "1800/3", "2500"]'
+        tr-td='[
+          [{ "value": "4,2", "color": "red" }, { "value": "3,71", "color": "red" }, { "value": "3,83", "color": "green" }, { "value": "2,7", "color": "green" }],
+          [{ "value": "4,2", "color": "red" }, { "value": "3,71", "color": "red" }, { "value": "3,83", "color": "green" }, { "value": "2,7", "color": "green" }],
+          [{ "value": "4,2", "color": "red" }, { "value": "3,71", "color": "red" }, { "value": "3,83", "color": "green" }, { "value": "2,7", "color": "green" }],
+          [{ "value": "4,2", "color": "red" }, { "value": "3,71", "color": "red" }, { "value": "3,83", "color": "green" }, { "value": "2,7", "color": "green" }]
+        ]'
+        bin='[{ "value": "2,7", "color": "green" }, { "value": "2,7", "color": "green" }, { "value": "2,7", "color": "green" }, { "value": "2,7", "color": "green" }]'
+      ></shift-waste-table>
+
+      <shift-waste-table
+        id="waste-table-2"
+        title="Эффективность Цеха Экструзии №2 (4,09%)"
+        th='["1800/4", "BFS-65", "GF 55/1", "GF 55/2", "OZ-1200", "MB45"]'
+        tr-td='[
+          [{ "value": "8,63", "color": "red" }, { "value": "7,56", "color": "red" }, { "value": "3,28", "color": "green" }, { "value": "2,55", "color": "green" }, { "value": "4,17", "color": "red" }, { "value": "1,5", "color": "green" }],
+          [{ "value": "8,63", "color": "red" }, { "value": "7,56", "color": "red" }, { "value": "3,28", "color": "green" }, { "value": "2,55", "color": "green" }, { "value": "4,17", "color": "red" }, { "value": "1,5", "color": "green" }],
+          [{ "value": "8,63", "color": "red" }, { "value": "7,56", "color": "red" }, { "value": "3,28", "color": "green" }, { "value": "2,55", "color": "green" }, { "value": "4,17", "color": "red" }, { "value": "1,5", "color": "green" }],
+          [{ "value": "8,63", "color": "red" }, { "value": "7,56", "color": "red" }, { "value": "3,28", "color": "green" }, { "value": "2,55", "color": "green" }, { "value": "4,17", "color": "red" }, { "value": "1,5", "color": "green" }]
+        ]'
+        bin='[{ "value": "2,7", "color": "green" }, { "value": "2,7", "color": "green" }, { "value": "2,7", "color": "red" }, { "value": "2,7", "color": "red" }]'
+      ></shift-waste-table>
+    </div>
+
+    <script src="./Scripts/update-gauges.js"></script>
+  </body>
+</html>
